@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aggregator-to-Direct Conversion — Amlan Sengupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+  <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+
+  <div class="deck">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide slide-cover">
+      <div class="cover-tag">MakeMyTrip · Growth · Monetization</div>
+      <h1>Aggregator-to-Direct<br/>Conversion</h1>
+      <p class="cover-sub">How I drove a 60% lift in direct bookings and saved ₹1.3 Cr in annual acquisition costs</p>
+      <div class="cover-meta">
+        <span>Amlan Sengupta</span>
+        <span>APM, MMT GCC/Global</span>
+        <span>2025</span>
+      </div>
+      <div class="slide-num">01 / 10</div>
+    </div>
+
+    <!-- SLIDE 2: CONTEXT -->
+    <div class="slide">
+      <div class="slide-label">Context</div>
+      <h2>The Problem Space</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>MakeMyTrip GCC/Global was receiving high volumes of flight traffic through aggregator platforms (Kayak, Google Flights etc). While this drove top-of-funnel volume, the conversion to direct bookings was stuck at <strong>10%</strong> — well below industry benchmarks.</p>
+          <p>This meant we were effectively paying acquisition costs to aggregators for users who then booked directly — a costly and inefficient loop.</p>
+          <div class="callout">
+            <span class="callout-label">Core Question</span>
+            How do we shift user intent from aggregator browsing to direct booking without sacrificing volume?
+          </div>
+        </div>
+        <div class="col-stats">
+          <div class="big-stat"><span class="num">10%</span><span class="lbl">Aggregator-to-direct conversion baseline</span></div>
+          <div class="big-stat accent2"><span class="num">~10M</span><span class="lbl">Daily low-intent hits from aggregators</span></div>
+          <div class="big-stat accent3"><span class="num">High</span><span class="lbl">CAC from paid aggregator channels</span></div>
+        </div>
+      </div>
+      <div class="slide-num">02 / 10</div>
+    </div>
+
+    <!-- SLIDE 3: DIAGNOSIS -->
+    <div class="slide">
+      <div class="slide-label">Diagnosis</div>
+      <h2>Root Cause Analysis</h2>
+      <div class="four-cards">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>No Intent Filtering</h3>
+          <p>All aggregator traffic landed equally — no distinction between high and low booking intent users.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Funnel Leakage</h3>
+          <p>Round Trip listings had a stepped drop-off — users weren't seeing the right fare options at the right moment.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💸</div>
+          <h3>Cost Inefficiency</h3>
+          <p>CAC was inflated by low-intent hits that consumed infrastructure resources without converting.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Fare Visibility</h3>
+          <p>Premium and business fare families had low interstitial visibility — users defaulted to economy without considering upgrades.</p>
+        </div>
+      </div>
+      <div class="slide-num">03 / 10</div>
+    </div>
+
+    <!-- SLIDE 4: STRATEGY -->
+    <div class="slide">
+      <div class="slide-label">Strategy</div>
+      <h2>Three-Track Approach</h2>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Traffic Gating Layer</h3>
+            <p>Architected a gating mechanism to identify and filter ~10M daily low-intent aggregator hits using behavioural signals — time-on-page, session depth, prior booking history — while preserving high-intent traffic and booking conversion rates.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>DS-Driven Predictive Clustering</h3>
+            <p>Worked with Data Science to build a predictive clustering model for Round Trip flight listings. The model identified user intent clusters and served personalised fare sequences — driving step-wise conversion improvements at each funnel stage.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Interstitial Redesign</h3>
+            <p>Redesigned fare-family interstitials to increase premium and business fare visibility. A/B tested placement, copy, and visual hierarchy — resulting in higher fare-family share without degrading overall conversion.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">04 / 10</div>
+    </div>
+
+    <!-- SLIDE 5: EXECUTION -->
+    <div class="slide">
+      <div class="slide-label">Execution</div>
+      <h2>How It Was Built</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Traffic Gating</h3>
+          <ul class="bullet-list">
+            <li>Defined intent signals with Data Science — session depth, scroll patterns, prior booking signals</li>
+            <li>Built gating rules in collaboration with engineering</li>
+            <li>Monitored booking conversion vs hit reduction ratio weekly</li>
+          </ul>
+          <h3 style="margin-top:20px">Predictive Clustering</h3>
+          <ul class="bullet-list">
+            <li>Defined feature set for clustering model with DS team</li>
+            <li>Ran controlled A/B tests on Round Trip listings</li>
+            <li>Iterated on cluster definitions based on conversion signals</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <h3>Interstitial Redesign</h3>
+          <ul class="bullet-list">
+            <li>Mapped full fare-selection UX flow with design team</li>
+            <li>Identified low-visibility zones for premium fare cards</li>
+            <li>A/B tested 3 variants — copy, placement, visual treatment</li>
+            <li>Shipped winning variant to 100% of GCC traffic</li>
+          </ul>
+          <div class="callout" style="margin-top:24px">
+            <span class="callout-label">Tools Used</span>
+            SQL · Mixpanel · Figma · Internal A/B testing framework · Confluence PRDs
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">05 / 10</div>
+    </div>
+
+    <!-- SLIDE 6: METRICS -->
+    <div class="slide slide-dark">
+      <div class="slide-label">Results</div>
+      <h2>Impact at a Glance</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-num">10% → 16%</div>
+          <div class="result-lbl">Aggregator-to-direct conversion rate</div>
+          <div class="result-delta">+60% relative lift</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">₹1.3 Cr</div>
+          <div class="result-lbl">Annual acquisition cost savings</div>
+          <div class="result-delta">Reduced CAC from aggregator channel</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">+7%</div>
+          <div class="result-lbl">Step-wise conversion on Round Trip listings</div>
+          <div class="result-delta">From predictive clustering model</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">+12%</div>
+          <div class="result-lbl">Premium & business fare-family share</div>
+          <div class="result-delta">From interstitial redesign</div>
+        </div>
+      </div>
+      <div class="slide-num">06 / 10</div>
+    </div>
+
+    <!-- SLIDE 7: LEARNINGS -->
+    <div class="slide">
+      <div class="slide-label">Learnings</div>
+      <h2>What I Learned</h2>
+      <div class="learnings">
+        <div class="learning-item">
+          <div class="learning-num">L1</div>
+          <div>
+            <h3>Intent ≠ Volume</h3>
+            <p>High traffic numbers can mask poor intent quality. Filtering for intent — even at the cost of some volume — delivers better unit economics and cleaner conversion funnels.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L2</div>
+          <div>
+            <h3>DS Models Need PM Guardrails</h3>
+            <p>Predictive models are only as good as the metrics they optimise for. Defining the right north star (step-wise conversion vs overall booking rate) was the most important decision in the DS collaboration.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L3</div>
+          <div>
+            <h3>UX Changes Have Monetization Upside</h3>
+            <p>The interstitial redesign was framed as a "UX improvement" internally but had a direct monetization impact. Framing product work in revenue terms gets faster alignment from stakeholders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">07 / 10</div>
+    </div>
+
+    <!-- SLIDE 8: PARTNER ONBOARDING -->
+    <div class="slide">
+      <div class="slide-label">Related Work</div>
+      <h2>Third-Party Partner Onboarding</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>Alongside the conversion work, I orchestrated the onboarding of <strong>Kayak</strong> and <strong>Etihad Rail</strong> as third-party partners — a critical component of the GCC/Global growth strategy.</p>
+          <h3 style="margin-top:20px">What This Involved</h3>
+          <ul class="bullet-list">
+            <li>Defining API contract schemas and data exchange formats</li>
+            <li>Designing attribution logic for partner-sourced bookings</li>
+            <li>Building workflow integrations between MMT backend and partner systems</li>
+            <li>Coordinating across legal, engineering, and business development</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <div class="callout">
+            <span class="callout-label">Key Skill Applied</span>
+            Technical PM — I drew on my SDE background at Amadeus to drive API contract alignment directly with engineering, reducing back-and-forth and accelerating the integration timeline.
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">Outcome</span>
+            Both partners went live within the committed timeline. Attribution logic was validated with zero revenue leakage on day-1.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">08 / 10</div>
+    </div>
+
+    <!-- SLIDE 9: WHAT I'D DO DIFFERENTLY -->
+    <div class="slide">
+      <div class="slide-label">Reflection</div>
+      <h2>What I'd Do Differently</h2>
+      <div class="three-col">
+        <div class="reflection-card">
+          <div class="r-icon">⚡</div>
+          <h3>Move Faster on Gating</h3>
+          <p>I was conservative about how aggressively to gate low-intent traffic. In hindsight, the data supported a more aggressive threshold from week 3 — I would act on signals faster.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">📐</div>
+          <h3>Define Success Earlier</h3>
+          <p>The A/B test success metrics for the interstitial were defined mid-experiment. Next time I'd pre-register the primary metric and minimum detectable effect before launch.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">🤝</div>
+          <h3>Involve Finance Earlier</h3>
+          <p>The ₹1.3 Cr savings figure was calculated post-launch. Involving finance in the business case earlier would have accelerated stakeholder buy-in and resource allocation.</p>
+        </div>
+      </div>
+      <div class="slide-num">09 / 10</div>
+    </div>
+
+    <!-- SLIDE 10: CLOSE -->
+    <div class="slide slide-cover">
+      <div class="cover-tag">Summary</div>
+      <h1>60% Conversion Lift.<br/>₹1.3 Cr Saved.</h1>
+      <p class="cover-sub">A three-track initiative combining traffic gating, predictive ML, and UX — proof that growth and cost efficiency can be solved together.</p>
+      <div class="skills-used">
+        <span>Growth</span><span>Data Science Collaboration</span><span>A/B Testing</span><span>SQL</span><span>API Integrations</span><span>Monetization</span>
+      </div>
+      <a href="../index.html#projects" class="back-btn-inline">← Back to all projects</a>
+      <div class="slide-num">10 / 10</div>
+    </div>
+
+  </div>
+
+  <div class="nav-controls">
+    <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
+    <span id="slideCounter">1 / 10</span>
+    <button id="nextBtn" onclick="navigate(1)">Next →</button>
+  </div>
+
+  <script src="../case.js"></script>
+</body>
+</html>

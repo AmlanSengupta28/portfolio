@@ -167,14 +167,15 @@ body {
 
 h1 {
   font-family: var(--font-head);
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 700; line-height: 1.1;
-  letter-spacing: -1px; color: var(--text);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -2px; color: var(--text);
   margin-bottom: 20px;
 }
 .name-highlight {
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 h2 {
   font-family: var(--font-head);
@@ -250,8 +251,7 @@ section { padding: 100px 0; }
 .photo-frame {
   background: var(--bg3); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;
-  width: 260px; height: 300px;
-  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
 }
 .photo-placeholder {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
@@ -306,6 +306,10 @@ section { padding: 100px 0; }
 /* ─── PROJECTS ────────────────────────────────────────────────── */
 #projects { background: var(--bg2); }
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.pv-4 { background: linear-gradient(135deg, #1a2a0a 0%, #2d5010 100%); }
+.pv-5 { background: linear-gradient(135deg, #2a0a2a 0%, #4a1060 100%); }
+.pv-6 { background: linear-gradient(135deg, #2a1000 0%, #601010 100%); }
+.case-cta { margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--accent); }
 .project-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta-to-Direct Booking — Amlan Sengupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+  <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+  <div class="deck">
+
+    <div class="slide slide-cover">
+      <div class="cover-tag">MakeMyTrip · Growth Strategy · Channel Optimisation</div>
+      <h1>Meta-to-Direct<br/>Booking</h1>
+      <p class="cover-sub">Converting paid social intent into owned direct bookings — reducing dependency on Meta's ad auction and improving LTV economics</p>
+      <div class="cover-meta"><span>Amlan Sengupta</span><span>APM, MMT GCC/Global</span><span>2025</span></div>
+      <div class="slide-num">01 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Context</div>
+      <h2>The Meta Dependency Problem</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>A significant portion of MMT GCC/Global's paid acquisition runs through <strong>Meta (Instagram + Facebook)</strong> — retargeting users who've searched for flights but haven't booked. While this channel drives volume, it creates three structural problems:</p>
+          <ul class="bullet-list" style="margin-top:16px">
+            <li>CPM inflation — Meta's auction gets more expensive every year</li>
+            <li>Attribution opacity — Meta's 7-day click / 1-day view windows inflate attributed revenue</li>
+            <li>No owned relationship — users who book via Meta ad stay as Meta's audience, not MMT's</li>
+          </ul>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">Strategic Goal</span>
+            Use Meta as a discovery layer but capture users into MMT's owned lifecycle — reducing re-acquisition costs on subsequent bookings.
+          </div>
+        </div>
+        <div class="col-stats">
+          <div class="big-stat"><span class="num">↑ CPM</span><span class="lbl">Meta ad costs rising YoY across travel vertical</span></div>
+          <div class="big-stat accent2"><span class="num">Low</span><span class="lbl">Repeat booking rate from Meta-acquired users</span></div>
+          <div class="big-stat accent3"><span class="num">High</span><span class="lbl">LTV gap: owned vs paid-channel customers</span></div>
+        </div>
+      </div>
+      <div class="slide-num">02 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Diagnosis</div>
+      <h2>Why Users Don't Convert Direct</h2>
+      <div class="four-cards">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Friction at Handoff</h3>
+          <p>Meta ad → app store → download → account creation → search is a 5-step funnel. Most users drop at step 3.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>No Value Hook</h3>
+          <p>The landing experience after clicking a Meta ad doesn't give users a compelling reason to create an account vs just booking as guest.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔔</div>
+          <h3>Weak Re-engagement</h3>
+          <p>Users who browse but don't book receive generic retargeting — not personalised nudges tied to their searched route and date.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎁</div>
+          <h3>No First-Party Incentive</h3>
+          <p>There's no clear benefit to booking direct vs through Meta — no exclusive pricing, no loyalty point accrual, no saved preferences.</p>
+        </div>
+      </div>
+      <div class="slide-num">03 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Strategy</div>
+      <h2>Four-Part Conversion Architecture</h2>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Instant Web Booking (No-Download Path)</h3>
+            <p>Build a frictionless PWA (Progressive Web App) landing page served directly from Meta ads. User lands, sees their searched route pre-filled, books in 3 taps — no app download, no account required. Email captured at booking confirmation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>First-Booking Incentive Layer</h3>
+            <p>Users who create an MMT account during or post-booking receive: MMT Cash reward on next booking, saved itinerary, and price drop alert for their searched route. Makes account creation feel like a gain, not friction.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Personalised Re-engagement Lifecycle</h3>
+            <p>Users who click Meta ad but don't book enter a 72-hour lifecycle: T+2hr WhatsApp nudge with exact route + price, T+24hr price movement alert, T+72hr last-call with dynamic urgency signal (seats filling). All triggered by Meta pixel event.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>Second-Booking Direct Channel Lock-in</h3>
+            <p>Post-first-booking, shift the user entirely to MMT-owned channels. Push notification + email sequence positions the MMT app as the default — with personalised deal alerts, trip history, and upcoming trip countdown.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">04 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Execution</div>
+      <h2>Building the PWA Landing Page</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Technical Architecture</h3>
+          <ul class="bullet-list">
+            <li>Meta ad carries UTM + route parameters in URL</li>
+            <li>PWA pre-populates origin, destination, date from UTM</li>
+            <li>Search results rendered server-side for speed</li>
+            <li>Booking flow compressed to 3 screens: results → seat → payment</li>
+            <li>Email/phone captured at payment — account auto-created</li>
+          </ul>
+          <div class="callout" style="margin-top:20px">
+            <span class="callout-label">Key Metric to Watch</span>
+            Meta ad click → PWA booking conversion rate. Baseline: ~2% (app store path). Target: 8–10% (direct PWA path).
+          </div>
+        </div>
+        <div class="col-text">
+          <h3>Lifecycle Trigger Setup</h3>
+          <ul class="bullet-list">
+            <li>Meta pixel fires on "search" event → enters WhatsApp journey</li>
+            <li>Route + price data passed via server-side API to lifecycle tool</li>
+            <li>Price movement tracked in real-time → triggers alert if fare changes ±5%</li>
+            <li>Urgency signal: "X seats left at this price" from inventory API</li>
+          </ul>
+          <div class="callout" style="margin-top:20px">
+            <span class="callout-label">Stack</span>
+            Meta Pixel · WhatsApp Business API · Internal pricing API · Lifecycle automation (CleverTap / MoEngage)
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">05 / 10</div>
+    </div>
+
+    <div class="slide slide-dark">
+      <div class="slide-label">Projected Impact</div>
+      <h2>Expected Outcomes</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-num">4–5x</div>
+          <div class="result-lbl">Improvement in Meta → booking conversion</div>
+          <div class="result-delta">2% (app store path) → 8–10% (PWA direct)</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">↓ CAC</div>
+          <div class="result-lbl">Reduced cost per acquired booker</div>
+          <div class="result-delta">Fewer wasted Meta impressions per booking</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">+2nd booking</div>
+          <div class="result-lbl">Direct channel lock-in post first booking</div>
+          <div class="result-delta">LTV improvement from owned lifecycle</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">WhatsApp</div>
+          <div class="result-lbl">72-hr re-engagement reduces browse abandonment</div>
+          <div class="result-delta">Personalised route + price nudge</div>
+        </div>
+      </div>
+      <div class="slide-num">06 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Prioritisation</div>
+      <h2>What to Build First</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Phase 1 — Quick Win (4 weeks)</h3>
+          <ul class="bullet-list">
+            <li>WhatsApp re-engagement lifecycle for browse abandoners</li>
+            <li>Low engineering effort, high conversion uplift</li>
+            <li>No new landing page needed — works with existing app deep links</li>
+            <li>Validates personalised nudge hypothesis before bigger investment</li>
+          </ul>
+          <h3 style="margin-top:20px">Phase 2 — Core Build (8 weeks)</h3>
+          <ul class="bullet-list">
+            <li>PWA landing page with route pre-fill</li>
+            <li>Compressed 3-screen booking flow</li>
+            <li>Auto-account creation at payment</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <h3>Phase 3 — Lock-in (ongoing)</h3>
+          <ul class="bullet-list">
+            <li>First-booking MMT Cash reward programme</li>
+            <li>Second-booking direct channel incentives</li>
+            <li>Personalised deal alerts for searched routes</li>
+          </ul>
+          <div class="callout" style="margin-top:20px">
+            <span class="callout-label">Why Phase 1 First</span>
+            The WhatsApp lifecycle requires the least engineering investment and gives us conversion signal data before we commit to the bigger PWA build. Ship, measure, then scale.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">07 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Risks</div>
+      <h2>What Could Go Wrong</h2>
+      <div class="learnings">
+        <div class="learning-item">
+          <div class="learning-num">R1</div>
+          <div>
+            <h3>Meta Policy Changes</h3>
+            <p><strong>Risk:</strong> Meta restricts pixel data sharing or changes attribution windows — breaking the trigger mechanism. <strong>Mitigation:</strong> Server-side pixel integration (Conversions API) is more resilient than browser pixel. Invest in this from day 1.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">R2</div>
+          <div>
+            <h3>WhatsApp Opt-out Rates</h3>
+            <p><strong>Risk:</strong> Aggressive 72-hour lifecycle triggers high opt-out rates, burning the channel. <strong>Mitigation:</strong> Cap at 2 messages per browse session. A/B test message frequency. Monitor opt-out rate as primary guardrail.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">R3</div>
+          <div>
+            <h3>PWA Performance on Low-End Devices</h3>
+            <p><strong>Risk:</strong> GCC users skew premium devices but India segments don't — PWA must load in &lt;3s on 4G. <strong>Mitigation:</strong> Server-side rendering, aggressive caching, lazy-load non-critical assets. Performance budget defined before build starts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">08 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Reflection</div>
+      <h2>The Bigger Principle</h2>
+      <div class="three-col">
+        <div class="reflection-card">
+          <div class="r-icon">🏠</div>
+          <h3>Own Your Audience</h3>
+          <p>Paid channels are rented audiences. Every growth strategy should have a parallel "own the user" track — email, WhatsApp, push — that reduces future acquisition cost for the same user.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">⚡</div>
+          <h3>Reduce Steps, Not Just Friction</h3>
+          <p>The biggest conversion killer wasn't UX friction — it was the number of steps. From 5 steps (ad → store → download → signup → book) to 3 (ad → PWA → book) is a structural shift, not a UX polish.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">📊</div>
+          <h3>Attribution Drives Decisions</h3>
+          <p>If you can't accurately attribute a booking to a channel, you can't optimise spend. Server-side attribution is infrastructure investment — it pays back in every budget conversation you have with marketing.</p>
+        </div>
+      </div>
+      <div class="slide-num">09 / 10</div>
+    </div>
+
+    <div class="slide slide-cover">
+      <div class="cover-tag">Summary</div>
+      <h1>Meta as Discovery.<br/>MMT as Destination.</h1>
+      <p class="cover-sub">A four-part architecture to convert paid social intent into owned direct bookings — reducing CAC, improving LTV, and building a channel-independent customer base.</p>
+      <div class="skills-used">
+        <span>Growth</span><span>Channel Strategy</span><span>Lifecycle</span><span>PWA</span><span>Attribution</span><span>Monetization</span>
+      </div>
+      <a href="../index.html#projects" class="back-btn-inline">← Back to all projects</a>
+      <div class="slide-num">10 / 10</div>
+    </div>
+
+  </div>
+  <div class="nav-controls">
+    <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
+    <span id="slideCounter">1 / 10</span>
+    <button id="nextBtn" onclick="navigate(1)">Next →</button>
+  </div>
+  <script src="../case.js"></script>
+</body>
+</html>

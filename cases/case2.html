@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedded Finance in Booking Flow — Amlan Sengupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+  <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+  <div class="deck">
+
+    <div class="slide slide-cover">
+      <div class="cover-tag">MakeMyTrip · Fintech · Monetization</div>
+      <h1>Embedded Finance<br/>in Booking Flow</h1>
+      <p class="cover-sub">How I launched Trip Delay & Baggage Insurance natively — generating ₹55L annual revenue and +15% attach rate</p>
+      <div class="cover-meta"><span>Amlan Sengupta</span><span>APM, MMT GCC/Global</span><span>2025</span></div>
+      <div class="slide-num">01 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Context</div>
+      <h2>The Opportunity</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>Travel insurance is a natural complement to flight bookings — yet at MMT GCC/Global, insurance products were completely <strong>decoupled</strong> from the booking flow. Users had to actively seek them out, resulting in near-zero organic attach rates.</p>
+          <p>Simultaneously, there was a broader business mandate to grow ancillary revenue. Embedded finance — surfacing financial products at the moment of highest intent — was the clearest path.</p>
+          <div class="callout">
+            <span class="callout-label">Opportunity Statement</span>
+            Embed Trip Delay & Baggage Insurance natively into the booking flow to capture purchase intent at its peak — right before payment confirmation.
+          </div>
+        </div>
+        <div class="col-stats">
+          <div class="big-stat"><span class="num">~0%</span><span class="lbl">Organic insurance attach rate pre-launch</span></div>
+          <div class="big-stat accent2"><span class="num">₹55L</span><span class="lbl">Annual revenue target</span></div>
+          <div class="big-stat accent3"><span class="num">High</span><span class="lbl">User intent at booking confirmation step</span></div>
+        </div>
+      </div>
+      <div class="slide-num">02 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Problem Definition</div>
+      <h2>Why Wasn't This Done Before?</h2>
+      <div class="four-cards">
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h3>Decoupled UX</h3>
+          <p>Insurance was a separate product page — no handoff from the booking funnel to insurance discovery.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>No Business Case</h3>
+          <p>Revenue potential hadn't been formally modelled. No one had quantified what attach rate improvement was worth.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>Technical Debt</h3>
+          <p>Booking flow had limited slots for new UI elements — required careful placement to avoid conversion regression.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Partner Alignment</h3>
+          <p>Insurance provider integration required API alignment, claims workflow definition, and legal sign-off.</p>
+        </div>
+      </div>
+      <div class="slide-num">03 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Strategy</div>
+      <h2>Two-Track Approach</h2>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Embedded Insurance UX</h3>
+            <p>Design and ship Trip Delay & Baggage Insurance cards natively within the booking confirmation step. Placement optimised for visibility without disrupting core booking conversion. A/B tested opt-in vs opt-out framing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>SQL-Driven Recommendation Engine</h3>
+            <p>Built a recommendation engine using booking and post-sales behavioural signals — route risk (delay-prone airports), traveller profile (frequent flyer vs first-timer), and historical claims data — to surface the right insurance product to the right user at the right moment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">04 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Execution</div>
+      <h2>Building the Business Case First</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Business Case Modelling</h3>
+          <ul class="bullet-list">
+            <li>Modelled attach rate scenarios: 5%, 10%, 15% of booking volume</li>
+            <li>Calculated revenue per attached policy vs CAC</li>
+            <li>Mapped to annual GCC/Global booking volume</li>
+            <li>Presented to leadership with break-even and upside scenarios</li>
+          </ul>
+          <h3 style="margin-top:20px">Recommendation Engine</h3>
+          <ul class="bullet-list">
+            <li>Defined feature set: route, airport delay history, traveller tier</li>
+            <li>Wrote SQL queries to extract and validate training signals</li>
+            <li>Worked with DS to build scoring model</li>
+            <li>Integrated scores into booking flow API response</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <h3>UX Integration</h3>
+          <ul class="bullet-list">
+            <li>Mapped 3 candidate placement slots in booking flow</li>
+            <li>A/B tested pre-payment vs post-selection placement</li>
+            <li>Tested opt-in checkbox vs pre-selected toggle</li>
+            <li>Monitored core booking conversion as guardrail metric</li>
+          </ul>
+          <div class="callout" style="margin-top:24px">
+            <span class="callout-label">Key Risk Managed</span>
+            Core booking conversion could not regress. This was the non-negotiable guardrail metric throughout all testing phases.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">05 / 10</div>
+    </div>
+
+    <div class="slide slide-dark">
+      <div class="slide-label">Results</div>
+      <h2>Outcomes</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-num">₹55L</div>
+          <div class="result-lbl">Annual revenue from embedded insurance</div>
+          <div class="result-delta">New revenue line, zero cannibalisation</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">+15%</div>
+          <div class="result-lbl">Insurance attach rate via recommendation engine</div>
+          <div class="result-delta">From near-zero baseline</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">0%</div>
+          <div class="result-lbl">Core booking conversion regression</div>
+          <div class="result-delta">Guardrail metric held throughout</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">2</div>
+          <div class="result-lbl">Insurance products launched: Trip Delay & Baggage</div>
+          <div class="result-delta">Both live within committed timeline</div>
+        </div>
+      </div>
+      <div class="slide-num">06 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Learnings</div>
+      <h2>Key Takeaways</h2>
+      <div class="learnings">
+        <div class="learning-item">
+          <div class="learning-num">L1</div>
+          <div>
+            <h3>Business Case Unlocks Resources</h3>
+            <p>The feature sat in the backlog until I modelled the revenue potential. A clear ₹ number attached to the initiative moved it to the top of the priority stack. Always quantify before pitching.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L2</div>
+          <div>
+            <h3>Guardrail Metrics Are Non-Negotiable</h3>
+            <p>Setting core booking conversion as a hard guardrail — not just a soft KPI — created alignment across engineering, design, and leadership on what "success" meant.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L3</div>
+          <div>
+            <h3>Timing > Placement</h3>
+            <p>The pre-payment placement outperformed post-selection by 2x in A/B testing. Intent is highest right before the user commits money — that's the moment to surface the add-on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">07 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Technical Depth</div>
+      <h2>The Recommendation Engine</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Signal Sources</h3>
+          <ul class="bullet-list">
+            <li><strong>Route signals:</strong> Historical delay rates by airport pair</li>
+            <li><strong>Traveller signals:</strong> Booking frequency, tier, past claims</li>
+            <li><strong>Session signals:</strong> Trip duration, # of passengers, fare class</li>
+            <li><strong>Post-sales signals:</strong> Prior baggage issues, cancellation history</li>
+          </ul>
+          <h3 style="margin-top:20px">Output</h3>
+          <p>A relevance score (0–1) per user-session-product combination, surfaced via booking flow API. Higher scores triggered proactive insurance card placement; lower scores showed a softer CTA.</p>
+        </div>
+        <div class="col-text">
+          <div class="callout">
+            <span class="callout-label">My Role in the Engine</span>
+            I defined the feature set and wrote the initial SQL queries to validate signal quality. The model architecture was built by DS — my contribution was making sure the right inputs went in and the right product decision came out.
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">Data Stack</span>
+            SQL (Redshift) · Internal booking events · Post-sales claims database · Mixpanel for conversion tracking
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">08 / 10</div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-label">Reflection</div>
+      <h2>What I'd Do Differently</h2>
+      <div class="three-col">
+        <div class="reflection-card">
+          <div class="r-icon">📊</div>
+          <h3>Test More Variants</h3>
+          <p>We tested 2 placement variants. With more runway I'd test 4–5 — including post-booking email nudge and in-app notification 24hrs before departure.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">🌍</div>
+          <h3>Localise for GCC</h3>
+          <p>GCC travellers have different insurance needs (visa requirements, medical coverage). A region-specific product variant could unlock a materially higher attach rate.</p>
+        </div>
+        <div class="reflection-card">
+          <div class="r-icon">🔄</div>
+          <h3>Post-Purchase Retargeting</h3>
+          <p>The attach rate window doesn't close at booking. A lifecycle journey (WhatsApp nudge T-48hrs) targeting unattached bookers would compound the revenue impact.</p>
+        </div>
+      </div>
+      <div class="slide-num">09 / 10</div>
+    </div>
+
+    <div class="slide slide-cover">
+      <div class="cover-tag">Summary</div>
+      <h1>₹55L Revenue.<br/>Built from Zero.</h1>
+      <p class="cover-sub">A business-case-first approach to embedded finance — from backlog idea to live revenue line in one quarter.</p>
+      <div class="skills-used">
+        <span>Monetization</span><span>SQL</span><span>Rec. Engine</span><span>A/B Testing</span><span>Business Case</span><span>Fintech</span>
+      </div>
+      <a href="../index.html#projects" class="back-btn-inline">← Back to all projects</a>
+      <div class="slide-num">10 / 10</div>
+    </div>
+
+  </div>
+  <div class="nav-controls">
+    <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
+    <span id="slideCounter">1 / 10</span>
+    <button id="nextBtn" onclick="navigate(1)">Next →</button>
+  </div>
+  <script src="../case.js"></script>
+</body>
+</html>
