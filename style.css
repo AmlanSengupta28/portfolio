@@ -167,15 +167,19 @@ body {
 
 h1 {
   font-family: var(--font-head);
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 800; line-height: 1.05;
-  letter-spacing: -2px; color: var(--text);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; line-height: 1.15;
+  letter-spacing: -1px; color: var(--text);
   margin-bottom: 20px;
 }
 .name-highlight {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  display: inline-block;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
 }
 h2 {
   font-family: var(--font-head);
