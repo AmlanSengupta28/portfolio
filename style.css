@@ -10,7 +10,7 @@
   --text:      #1a1f2e;
   --text-muted:#4a5068;
   --text-dim:  #8a90a2;
-  --accent:    #2952e3;
+  --accent:    #1a1f2e;
   --accent2:   #9b40c2;
   --accent3:   #0e8f72;
   --card:      #f0f2f5;
@@ -19,7 +19,7 @@
   --radius-sm: 6px;
   --font-head: 'DM Sans', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --max:       1600px;
+  --max:       1140px;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -35,7 +35,7 @@ body {
 
 ::selection { background: var(--accent); color: #fff; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+.container { max-width: var(--max); margin: 0 0 0 32px; padding: 0; }
 
 /* ─── SCROLLBAR ──────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
