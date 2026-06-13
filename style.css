@@ -149,6 +149,7 @@ body {
 }
 
 .hero-inner {
+  margin-bottom: 80px;
   display: grid; grid-template-columns: 1fr 240px;
   gap: 48px; align-items: center; position: relative; z-index: 1;
 }
