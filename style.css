@@ -19,7 +19,7 @@
   --radius-sm: 6px;
   --font-head: 'DM Sans', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --max:       1320px;
+  --max:       1400px;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -35,7 +35,7 @@ body {
 
 ::selection { background: var(--accent); color: #fff; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
 /* ─── SCROLLBAR ──────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
