@@ -22,7 +22,7 @@
   --max:       1140px;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 180px; }
 
 body {
   background: var(--bg);
