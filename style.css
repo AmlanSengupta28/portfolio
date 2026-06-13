@@ -9,7 +9,7 @@
   --border-h:  rgba(26,31,46,0.24);
   --text:      #1a1f2e;
   --text-muted:#4a5068;
-  --text-dim:  #4a5068;
+  --text-dim:  #8a90a2;
   --accent:    #2952e3;
   --accent2:   #9b40c2;
   --accent3:   #0e8f72;
@@ -17,9 +17,9 @@
   --card-h:    #eaecf0;
   --radius:    12px;
   --radius-sm: 6px;
-  --font-head: 'DM Sans', sans-serif;
+  --font-head: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --max:       1400px;
+  --max:       1600px;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -35,7 +35,7 @@ body {
 
 ::selection { background: var(--accent); color: #fff; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
 /* ─── SCROLLBAR ──────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
@@ -55,7 +55,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: var(--max); margin: 0 auto; padding: 0 24px;
+  max-width: var(--max); margin: 0 auto; padding: 0 32px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
@@ -149,11 +149,24 @@ body {
 }
 
 .hero-inner {
-  display: grid; grid-template-columns: 1fr 200px;
-  gap: 60px; align-items: center; position: relative; z-index: 1;
-  max-width: 100%;
-  padding: 0;
+  display: grid; grid-template-columns: 1fr 240px;
+  gap: 48px; align-items: center; position: relative; z-index: 1;
 }
+
+/* ─── HERO TAGS ──────────────────────────────────────────────── */
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 20px;
+}
+.htag {
+  font-size: 12px; font-weight: 500;
+  padding: 5px 12px;
+  background: rgba(41,82,227,0.07);
+  border: 1px solid rgba(41,82,227,0.18);
+  color: var(--accent);
+  border-radius: 100px;
+}
+
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(14,143,114,0.08); border: 1px solid rgba(14,143,114,0.22);
