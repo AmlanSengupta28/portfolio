@@ -347,6 +347,7 @@ section { padding: 96px 0; }
 .pv-5 { background: linear-gradient(135deg, #1f1030 0%, #3a0d5a 100%); }
 .pv-6 { background: linear-gradient(135deg, #200f0f 0%, #501010 100%); }
 .pv-7 { background: linear-gradient(135deg, #0f1a2e 0%, #1a2d55 100%); }
+.pv-8 { background: linear-gradient(135deg, #1a1200 0%, #3d2a00 100%); }
 
 .project-badge {
   position: absolute; top: 14px; left: 14px;

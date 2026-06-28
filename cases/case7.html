@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Streetly — Crowdsourced Road Rating · Amlan Sengupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+  <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+
+  <div class="deck">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide slide-cover">
+      <div class="cover-tag">React · Civic Tech · Side Project</div>
+      <h1>Streetly —<br/>Rate Your Road</h1>
+      <p class="cover-sub">How I designed and shipped a crowdsourced road condition reporting app from 0-to-1 — live at rashroad.vercel.app</p>
+      <div class="cover-meta">
+        <span>Amlan Sengupta</span>
+        <span>Product · Side Project</span>
+        <span>2025</span>
+      </div>
+      <div class="slide-num">01 / 10</div>
+    </div>
+
+    <!-- SLIDE 2: PROBLEM -->
+    <div class="slide">
+      <div class="slide-label">Problem</div>
+      <h2>The Problem Space</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>Road damage and hazards go largely unreported across Indian cities. Municipal complaint portals exist but are high-friction — they require logins, long forms, and often go unacknowledged.</p>
+          <p>For everyday commuters, there's no quick, mobile-first way to flag a pothole or waterlogging in seconds. And without aggregated reports, civic bodies have no real-time visibility into road quality on the ground.</p>
+          <div class="callout">
+            <span class="callout-label">Core Question</span>
+            How do we make road reporting so fast and low-friction that everyday commuters actually do it?
+          </div>
+        </div>
+        <div class="col-stats">
+          <div class="big-stat"><span class="num">High</span><span class="lbl">Friction of existing civic complaint portals</span></div>
+          <div class="big-stat accent2"><span class="num">0</span><span class="lbl">Real-time crowdsourced road quality maps in India</span></div>
+          <div class="big-stat accent3"><span class="num">Seconds</span><span class="lbl">Target time-to-report for a commuter</span></div>
+        </div>
+      </div>
+      <div class="slide-num">02 / 10</div>
+    </div>
+
+    <!-- SLIDE 3: USERS -->
+    <div class="slide">
+      <div class="slide-label">Users</div>
+      <h2>Who Are We Building For?</h2>
+      <div class="four-cards">
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Daily Commuters</h3>
+          <p>Drivers on regular routes who encounter the same potholes every day — frustrated but have no fast reporting channel.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏘️</div>
+          <h3>Local Residents</h3>
+          <p>People flagging hazards near their home or office — invested in the quality of their immediate area.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3>Gurgaon First</h3>
+          <p>Initial geography: NH48, Sector 20, DLF Phase 3, Moulsari Avenue corridor — high-density commuter zones.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏛️</div>
+          <h3>Civic Bodies (Future)</h3>
+          <p>Municipal authorities who could use aggregated data to prioritise road maintenance budgets by severity and volume.</p>
+        </div>
+      </div>
+      <div class="slide-num">03 / 10</div>
+    </div>
+
+    <!-- SLIDE 4: SOLUTION -->
+    <div class="slide">
+      <div class="slide-label">Solution</div>
+      <h2>Three-Tab Product Architecture</h2>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Report Tab</h3>
+            <p>The core flow — select a location (auto or manual), drag the score slider from Critical to Excellent, and tag specific problems. Designed to complete in under 30 seconds. One thumb, one screen, done.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>Map Tab</h3>
+            <p>A live geographic view of aggregated road quality scores across the city. Colour-coded by severity — gives users and potentially civic bodies a spatial understanding of where the worst roads are.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Explore Tab</h3>
+            <p>Browse reports by area, road name, or problem category. Lets users see what's been flagged near them and reinforces the community nature of the product.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">04 / 10</div>
+    </div>
+
+    <!-- SLIDE 5: LOCATION FEATURE -->
+    <div class="slide">
+      <div class="slide-label">Feature Deep-Dive</div>
+      <h2>Location Selection — Getting It Right</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <p>Location selection was the highest-friction point in the report flow. Getting it wrong means bad data. Getting it right means the entire platform's integrity.</p>
+          <h3 style="margin-top:20px">The Design Decisions</h3>
+          <ul class="bullet-list">
+            <li><strong>Auto-detect first</strong> — browser geolocation on load, no extra tap required</li>
+            <li><strong>Graceful permission fallback</strong> — if denied, show manual search immediately, not an error state</li>
+            <li><strong>Single card pattern</strong> — one location displayed at a time, no duplicate or stacked cards</li>
+            <li><strong>"Change" link always visible</strong> — user can correct location regardless of how it was set</li>
+            <li><strong>Result filtering</strong> — search distinguishes roads from landmarks, hospitals, metro stations</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <div class="callout">
+            <span class="callout-label">UX Principle</span>
+            A dead-end permission denial is a dropped report. Every friction point costs data quality. Graceful fallbacks are product decisions, not edge cases.
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">Key Iteration</span>
+            The single-card location display replaced an earlier design that showed both auto-detected and search results simultaneously — causing user confusion about which was active.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">05 / 10</div>
+    </div>
+
+    <!-- SLIDE 6: SCORING -->
+    <div class="slide">
+      <div class="slide-label">Feature Deep-Dive</div>
+      <h2>Scoring & Problem Tagging</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Drag-to-Score Slider</h3>
+          <ul class="bullet-list">
+            <li>Range: 0 (Critical) to 100 (Excellent)</li>
+            <li>Drag interaction — fast, tactile, mobile-optimised</li>
+            <li>Numeric score visible in real time as user drags</li>
+            <li>Default state designed to avoid ambiguous "already scored" feel</li>
+          </ul>
+          <h3 style="margin-top:20px">Problem Tagging</h3>
+          <ul class="bullet-list">
+            <li>Tap-to-select specific issue categories</li>
+            <li>Categories: potholes, cracks, waterlogging, broken surface, missing markings</li>
+            <li>Multi-select — a road can have multiple active problems</li>
+            <li>Tags feed into aggregate problem frequency on the map</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <div class="callout">
+            <span class="callout-label">Design Intent</span>
+            Scoring a road shouldn't feel like filling a form. The drag slider gives instant tactile feedback — users feel like they're making a quick, confident judgement, not completing a survey.
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">Data Use</span>
+            Aggregated scores per road segment surface an average quality rating on the map, weighted by recency. Problem tag frequencies drive a severity heatmap overlay.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">06 / 10</div>
+    </div>
+
+    <!-- SLIDE 7: RESULTS -->
+    <div class="slide slide-dark">
+      <div class="slide-label">Results</div>
+      <h2>Where Streetly Stands</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-num">Live</div>
+          <div class="result-lbl">Functional prototype at rashroad.vercel.app</div>
+          <div class="result-delta">Built & shipped end-to-end</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">React</div>
+          <div class="result-lbl">Mobile-first web app, deployed on Vercel</div>
+          <div class="result-delta">Zero native app store dependency</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">Gurgaon</div>
+          <div class="result-lbl">Initial geography — NH48, Sector 20, DLF Phase 3</div>
+          <div class="result-delta">High-density commuter corridors</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">&lt; 30s</div>
+          <div class="result-lbl">Target time-to-report for a commuter</div>
+          <div class="result-delta">Core UX design principle achieved</div>
+        </div>
+      </div>
+      <div class="slide-num">07 / 10</div>
+    </div>
+
+    <!-- SLIDE 8: TECH -->
+    <div class="slide">
+      <div class="slide-label">Technical</div>
+      <h2>How It's Built</h2>
+      <div class="two-col">
+        <div class="col-text">
+          <h3>Frontend</h3>
+          <ul class="bullet-list">
+            <li>React — component-driven, mobile-first layout</li>
+            <li>Browser Geolocation API for auto-location detection</li>
+            <li>Custom drag-to-score slider component</li>
+            <li>Tab-based navigation (Report / Map / Explore)</li>
+          </ul>
+          <h3 style="margin-top:20px">Infrastructure</h3>
+          <ul class="bullet-list">
+            <li>Deployed on Vercel — zero-config, instant deploys</li>
+            <li>Mobile-first responsive design, no native app required</li>
+            <li>Lightweight — loads fast on 4G mobile connections</li>
+          </ul>
+        </div>
+        <div class="col-text">
+          <div class="callout">
+            <span class="callout-label">Why React + Vercel?</span>
+            Fast iteration cycle. As a PM building solo, the stack needed to get from idea to live prototype in days, not weeks. React's component model lets me isolate and fix UX issues (like the location card) without touching the rest of the flow.
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <span class="callout-label">PM Insight</span>
+            Building this myself gave me direct empathy with the engineering side — every UX decision I made had to be feasible to implement alone in a weekend. That constraint made the design better, not worse.
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">08 / 10</div>
+    </div>
+
+    <!-- SLIDE 9: LEARNINGS -->
+    <div class="slide">
+      <div class="slide-label">Learnings</div>
+      <h2>What Building This Taught Me</h2>
+      <div class="learnings">
+        <div class="learning-item">
+          <div class="learning-num">L1</div>
+          <div>
+            <h3>Fallbacks Are First-Class Features</h3>
+            <p>The geolocation permission-denied state was an afterthought in v1 — it broke the entire report flow for users who denied access. Treating edge cases as primary user journeys is a product discipline, not a QA task.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L2</div>
+          <div>
+            <h3>Search Disambiguation Is Harder Than It Looks</h3>
+            <p>Distinguishing "Sector 20 Road" from "Sector 20 Metro Station" in search results requires deliberate result filtering. Generic place APIs return hospitals, schools, and landmarks — not roads. This is a data quality problem, not just a UX one.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-num">L3</div>
+          <div>
+            <h3>Default States Carry Product Intent</h3>
+            <p>The score slider's default position (mid-range vs no default) significantly changes user behaviour. An ambiguous default makes users second-guess themselves. Opinionated defaults are a product decision — not just a UI detail.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">09 / 10</div>
+    </div>
+
+    <!-- SLIDE 10: CLOSE -->
+    <div class="slide slide-cover">
+      <div class="cover-tag">Summary</div>
+      <h1>Built. Shipped.<br/>Live at rashroad.vercel.app</h1>
+      <p class="cover-sub">A 0-to-1 civic tech product that proves ideas don't need large teams — they need tight problem framing, opinionated UX decisions, and a bias for shipping.</p>
+      <div class="skills-used">
+        <span>React</span><span>Product Design</span><span>Civic Tech</span><span>Geolocation API</span><span>UX Research</span><span>Vercel</span>
+      </div>
+      <a href="https://rashroad.vercel.app" target="_blank" class="back-btn-inline" style="margin-right:12px">Visit Live Project →</a>
+      <a href="../index.html#projects" class="back-btn-inline">← Back to all projects</a>
+      <div class="slide-num">10 / 10</div>
+    </div>
+
+  </div>
+
+  <div class="nav-controls">
+    <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
+    <span id="slideCounter">1 / 10</span>
+    <button id="nextBtn" onclick="navigate(1)">Next →</button>
+  </div>
+
+  <script src="../case.js"></script>
+</body>
+</html>
