@@ -272,6 +272,22 @@ p { color: var(--text-muted); margin-bottom: 16px; }
   border-radius: 100px;
   color: var(--text-dim);
 }
+.hproject-card--soon {
+  cursor: default; opacity: 0.72;
+  box-shadow: 0 8px 32px rgba(26,31,46,0.13);
+  border-style: dashed;
+}
+.hproject-card--soon:hover {
+  transform: none; border-color: var(--border);
+  box-shadow: 0 8px 32px rgba(26,31,46,0.13);
+}
+.hpc-dot--soon { background: var(--text-dim); animation: none; }
+.hpc-soon-badge {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+  color: var(--text-dim);
+  background: rgba(26,31,46,0.07);
+  border-radius: 100px; padding: 2px 8px;
+}
 
 .hero-stats {
   display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1;
