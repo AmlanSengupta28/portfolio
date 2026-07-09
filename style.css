@@ -231,7 +231,7 @@ p { color: var(--text-muted); margin-bottom: 16px; }
   display: flex; gap: 12px; flex-wrap: wrap;
 }
 .hproject-card {
-  min-width: 210px;
+  width: 210px; height: 100px;
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 14px 16px;
   text-decoration: none; display: flex; flex-direction: column; gap: 6px;
