@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amlan Sengupta — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #111827;
+      --muted:    #4b5563;
+      --dim:      #6b7280;
+      --rule:     #e5e7eb;
+      --accent:   #1a1f2e;
+      --teal:     #0e8f72;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10.5pt;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 14mm 16mm 14mm 16mm;
+    }
+
+    /* ── HEADER ── */
+    .r-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 12px;
+    }
+    .r-name {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .r-title {
+      font-size: 10pt;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 3px;
+      letter-spacing: 0.3px;
+    }
+    .r-contact {
+      text-align: right;
+      font-size: 8.5pt;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .r-contact a { color: var(--muted); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    .r-section { margin-bottom: 11px; }
+    .r-section-title {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .r-job { margin-bottom: 10px; }
+    .r-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .r-job-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .r-job-date {
+      font-size: 8.5pt;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+    .r-job-company {
+      font-size: 9pt;
+      color: var(--teal);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .r-job-desc {
+      font-size: 9pt;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    ul.r-bullets {
+      padding-left: 13px;
+      margin: 0;
+    }
+    ul.r-bullets li {
+      font-size: 9pt;
+      color: var(--muted);
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+    ul.r-bullets li strong { color: var(--ink); font-weight: 600; }
+
+    /* ── PROJECTS ── */
+    .r-projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .r-project {
+      border: 1px solid var(--rule);
+      border-radius: 5px;
+      padding: 7px 10px;
+    }
+    .r-project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .r-project-name {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .r-project-link {
+      font-size: 8pt;
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .r-project-desc {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin: 2px 0 3px;
+      line-height: 1.4;
+    }
+    .r-project-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .r-project-tags span {
+      font-size: 7.5pt;
+      background: #f3f4f6;
+      color: var(--dim);
+      padding: 1px 6px;
+      border-radius: 100px;
+    }
+
+    /* ── EDUCATION ── */
+    .r-edu { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+    .r-edu-left {}
+    .r-edu-name { font-size: 9.5pt; font-weight: 700; color: var(--ink); }
+    .r-edu-deg  { font-size: 8.5pt; color: var(--muted); }
+    .r-edu-date { font-size: 8.5pt; color: var(--dim); white-space: nowrap; }
+
+    /* ── SKILLS ── */
+    .r-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .r-skill-group-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .r-skill-list {
+      font-size: 8.5pt;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── RECOGNITION ── */
+    .r-recog {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .r-recog-title { font-size: 9.5pt; font-weight: 700; color: var(--ink); }
+    .r-recog-sub   { font-size: 8.5pt; color: var(--muted); margin-top: 1px; }
+    .r-recog-date  { font-size: 8.5pt; color: var(--dim); }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 12mm 15mm; width: 100%; }
+      .no-print { display: none; }
+      a { color: inherit !important; }
+    }
+
+    /* ── SCREEN HELPER ── */
+    @media screen {
+      body { background: #f3f4f6; }
+      .page {
+        margin: 24px auto;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+      }
+      .print-btn {
+        display: block;
+        text-align: center;
+        margin: 0 auto 12px;
+        width: 210mm;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        padding: 10px;
+        background: #1a1f2e;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        letter-spacing: 0.3px;
+      }
+      .print-btn:hover { opacity: 0.88; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">Save as PDF (Ctrl+P)</button>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="r-header">
+      <div>
+        <div class="r-name">Amlan Sengupta</div>
+        <div class="r-title">Associate Product Manager · MakeMyTrip</div>
+      </div>
+      <div class="r-contact">
+        <a href="mailto:amlan.sengupta28@gmail.com">amlan.sengupta28@gmail.com</a><br/>
+        +91 97906 31117<br/>
+        <a href="https://linkedin.com/in/amlan-sengupta28/">linkedin.com/in/amlan-sengupta28</a><br/>
+        India
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="r-section">
+      <div class="r-section-title">Experience</div>
+
+      <div class="r-job">
+        <div class="r-job-header">
+          <span class="r-job-title">Associate Product Manager</span>
+          <span class="r-job-date">Apr 2025 — Present</span>
+        </div>
+        <div class="r-job-company">MakeMyTrip — GCC &amp; Global Flights</div>
+        <ul class="r-bullets">
+          <li>Architected a <strong>RAG-based GenAI agent</strong> from 0-to-1 for pre-sales query resolution — 60%+ automated resolution, projecting ₹7L cost reduction</li>
+          <li>DS-driven price &amp; duration clustering for round-trip listings — A/B validated, <strong>+7% step-wise conversion uplift</strong></li>
+          <li>Real-time behavioural snapshot enabling personalised checkout nudges — <strong>+15% ancillary attach rate</strong></li>
+          <li>Meta-to-direct conversion <strong>10% → 16%</strong> via retention interventions; <strong>₹1.3 Cr annual savings</strong></li>
+          <li>Embedded finance initiative across GCC markets — reduced rollout TTM from 8 to 2 weeks, unlocking <strong>₹2.4 Cr revenue</strong></li>
+          <li>Signal-based meta-search participation framework — reduced 10M+ daily requests, <strong>₹18.3L infra savings</strong></li>
+          <li>Kayak &amp; Skyscanner partner onboarding — CPA attribution, API contracts, <strong>25K+ new DAUs</strong></li>
+        </ul>
+      </div>
+
+      <div class="r-job">
+        <div class="r-job-header">
+          <span class="r-job-title">Product Intern <span style="font-weight:400;font-size:9pt;color:var(--teal)">(PPO Converted)</span></span>
+          <span class="r-job-date">Apr 2024 — Jun 2024</span>
+        </div>
+        <div class="r-job-company">MakeMyTrip</div>
+        <ul class="r-bullets">
+          <li>Analysed <strong>750+ sales calls</strong> &amp; 10+ stakeholder interviews to identify funnel friction points</li>
+          <li>SQL-based cohort analysis across customer segments; quarterly roadmap presented to <strong>COO</strong></li>
+          <li>7 PRDs prioritised via RICE framework, converted into sprint-ready backlog</li>
+        </ul>
+      </div>
+
+      <div class="r-job">
+        <div class="r-job-header">
+          <span class="r-job-title">Software Development Engineer</span>
+          <span class="r-job-date">Aug 2020 — Jun 2023</span>
+        </div>
+        <div class="r-job-company">Amadeus Labs — Air Canada Platform</div>
+        <ul class="r-bullets">
+          <li>Full-stack engineering on Air Canada's booking platform (100M+ annual visits) — <strong>20+ production releases</strong></li>
+          <li>Backend orchestration for insurance upsell &amp; dynamic pre-payment add-ons — attach rate <strong>+7%</strong></li>
+          <li>End-to-end Canadian regulatory compliance — <strong>zero audit findings</strong> across two government mandates</li>
+          <li>Sherpa API integration for real-time travel documentation validation — support calls <strong>−40%</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="r-section">
+      <div class="r-section-title">Side Projects</div>
+      <div class="r-projects-grid">
+        <div class="r-project">
+          <div class="r-project-top">
+            <span class="r-project-name">Kanoon Saathi</span>
+            <a class="r-project-link" href="https://indian-law-rag.vercel.app">indian-law-rag.vercel.app ↗</a>
+          </div>
+          <div class="r-project-desc">AI Legal Assistant for Indian Motor Vehicle Law — semantic search over 247 sections of the MVA 1988. Built and deployed end-to-end.</div>
+          <div class="r-project-tags"><span>Gemini</span><span>RAG</span><span>pgvector</span><span>FastAPI</span><span>Vercel</span></div>
+        </div>
+        <div class="r-project">
+          <div class="r-project-top">
+            <span class="r-project-name">Streetly</span>
+            <a class="r-project-link" href="https://rashroad.vercel.app">rashroad.vercel.app ↗</a>
+          </div>
+          <div class="r-project-desc">Crowdsourced road condition rating app — drag-to-score, geolocation, and problem tagging. Mobile-first, live in Gurgaon.</div>
+          <div class="r-project-tags"><span>React</span><span>Geolocation API</span><span>Civic Tech</span><span>Vercel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="r-section">
+      <div class="r-section-title">Education</div>
+      <div class="r-edu">
+        <div class="r-edu-left">
+          <div class="r-edu-name">Indian Institute of Management, Lucknow</div>
+          <div class="r-edu-deg">MBA — IT, Strategy &amp; Operations</div>
+        </div>
+        <div class="r-edu-date">2023 — 2025</div>
+      </div>
+      <div class="r-edu">
+        <div class="r-edu-left">
+          <div class="r-edu-name">VIT Vellore</div>
+          <div class="r-edu-deg">B.Tech — Electronics &amp; Communications Engineering</div>
+        </div>
+        <div class="r-edu-date">2016 — 2020</div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="r-section">
+      <div class="r-section-title">Skills</div>
+      <div class="r-skills-grid">
+        <div>
+          <div class="r-skill-group-title">Product</div>
+          <div class="r-skill-list">Roadmap &amp; Backlog Prioritisation · A/B Testing · Monetization &amp; Pricing · Lifecycle &amp; Retention · Go-To-Market · Financial Modelling · KPI Definition · Sprint Planning</div>
+        </div>
+        <div>
+          <div class="r-skill-group-title">Technical</div>
+          <div class="r-skill-list">SQL · Python · REST API Design · GenAI / RAG Architecture · Vector DBs · MongoDB · pgvector · Vercel · Supabase</div>
+        </div>
+        <div>
+          <div class="r-skill-group-title">Tools</div>
+          <div class="r-skill-list">Jira · Figma · Mixpanel · Google Analytics · Postman · Grafana · Splunk · Excel · Azure Fundamentals · SAFe 5 Certified</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECOGNITION -->
+    <div class="r-section">
+      <div class="r-section-title">Recognition</div>
+      <div class="r-recog">
+        <div>
+          <div class="r-recog-title">Accenture Innovation Challenge — National Finalist</div>
+          <div class="r-recog-sub">Top 5 of 50,000+ teams · EV charging platform with dynamic pricing and full unit economics</div>
+        </div>
+        <div class="r-recog-date">2024</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
